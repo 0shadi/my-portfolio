@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CoverComponent } from './pages/cover/cover.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    children: [
+      {
+        path: 'cover-page',
+        component: CoverComponent
+      }
+    ]
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
