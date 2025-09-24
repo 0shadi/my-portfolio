@@ -1,13 +1,13 @@
 <div class="book-container">
     <!-- Previous button -->
-    <button id="prev-button">
+    <button id="prev-button" (click)="goPrevPage()">
         Arrow
     </button>
 
     <!-- Book -->
     <div class="book">
         <!-- Page 1 -->
-        <div class="paper" id="p1">
+        <div class="paper" id="p1" [ngClass]="{ 'flipped': flippedPages[1] }">
             <div class="front">
                 <div class="front-content" id="f1">
                     <h1>Front 1</h1>
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Page 2 -->
-        <div class="paper" id="p2">
+        <div class="paper" id="p2" [ngClass]="{ 'flipped': flippedPages[2] }">
             <div class="front">
                 <div class="front-content" id="f2">
                     <h1>Front 2</h1>
@@ -35,8 +35,8 @@
         </div>
 
         <!-- Page 3 -->
-        <div class="paper">
-            <div class="front" id="p3">
+        <div class="paper" id="p3" [ngClass]="{ 'flipped': flippedPages[3] }">
+            <div class="front">
                 <div class="front-content" id="f3">
                     <h1>Front 3</h1>
                 </div>
@@ -50,7 +50,7 @@
     </div>
 
     <!-- Next button -->
-    <button id="prev-button">
+    <button id="prev-button" (click)="goNextPage()">
         Arrow
     </button>
 </div>
