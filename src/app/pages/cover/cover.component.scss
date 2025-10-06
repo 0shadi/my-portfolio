@@ -1,18 +1,20 @@
 .book-container{
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f7b58d;
+    gap: 100px;
 }
 
 .book{
-    width: 350px;
-    height: 500px;
+    width: 500px;
+    height: 650px;
     border: 1px solid saddlebrown;
     position: relative;
+    transition: transform 0.5s;
 }
 
 .paper{
@@ -61,6 +63,8 @@ button{
     cursor: pointer;
     margin: 10px;
     font-size: 10px;
+    z-index: 10;
+    transition: transform 0.5s;
 }
 
 button:focus{

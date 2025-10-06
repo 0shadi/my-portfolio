@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-cover',
@@ -8,11 +8,16 @@ import { AfterViewInit, Component, Renderer2 } from '@angular/core';
 export class CoverComponent implements AfterViewInit {
   public currentLocation = 1;
   public numOfPages = 3;
-  public pages!: NodeListOf<HTMLElement>;
+  public maxLocation = this.numOfPages+1;
+  // public isNextButtonDisabled = false;
 
-  flippedPages:boolean[] =[false, false, false];
-  public maxLocation = this.flippedPages.length;
-   
+  public pages!: NodeListOf<HTMLElement>;
+  flippedPages:boolean[] =[false, false, false,false, false]; // assuming a maximum of 5 pages for simplicity
+  
+
+  @ViewChild('book') book!: ElementRef;
+  @ViewChild('prevBtn') prevBtn!: ElementRef;
+  @ViewChild('nextBtn') nextBtn!: ElementRef;
 
   constructor(
     private renderer: Renderer2
@@ -26,11 +31,34 @@ export class CoverComponent implements AfterViewInit {
   }
   
   openBook(){
+    const bookElement = this.book.nativeElement;
+    this.renderer.setStyle(bookElement, 'transform', 'translateX(50%)');
+    // bookElement.style.transform = "translateX(50%)";
 
+    const prevBtnElement = this.prevBtn.nativeElement;
+    this.renderer.setStyle(prevBtnElement, 'transform', 'translateX(-180px)');
+    // prevBtnElement.style.transform = "translateX(-180px)";
+
+    const nextBtnElement = this.nextBtn.nativeElement;
+    this.renderer.setStyle(nextBtnElement, 'transform', 'translateX(180px)');
+    // nextBtnElement.style.transform = "translateX(180px)";
   }
 
-  closeBook(){
+  closeBook(isAtBegginig:boolean){
+    if(isAtBegginig){
+      const bookElement = this.book.nativeElement;
+      this.renderer.setStyle(bookElement, 'transform', 'translateX(0%)');
+    }
+    else{
+      const bookElement = this.book.nativeElement;
+      this.renderer.setStyle(bookElement, 'transform', 'translateX(100%)');
+    }
+    
+    const prevBtnElement = this.prevBtn.nativeElement;
+    this.renderer.setStyle(prevBtnElement, 'transform', 'translateX(0px)');
 
+    const nextBtnElement = this.nextBtn.nativeElement;
+    this.renderer.setStyle(nextBtnElement, 'transform', 'translateX(0px)');
   }
 
   goNextPage(){
@@ -53,31 +81,61 @@ export class CoverComponent implements AfterViewInit {
       // this.currentLocation++;
 
       this.flippedPages[this.currentLocation] = true;
-      this.currentLocation++;
+
+      console.log("Current location is ",this.currentLocation);
+      console.log("Flipped page statues is ",this.flippedPages);
 
       this.updateZIndex();
 
       if(this.currentLocation === 1){
         this.openBook();
       }
-      else if(this.currentLocation === this.maxLocation){
-        this.closeBook(); 
+
+      else if(this.currentLocation === this.maxLocation-1){
+        this.closeBook(false);
       }
+
+      
+      this.currentLocation++;
+      
+      console.log("Next location is ",this.currentLocation);
   }
 }
   updateZIndex(){
     this.pages.forEach((page, index) => {
-    if (index < this.currentLocation) {
+    if (index < this.currentLocation-1) {
       // Pages that are already flipped → lower z-index
       page.style.zIndex = String(index);
     } else {
       // Pages yet to be flipped → higher z-index
-      page.style.zIndex = String(this.pages.length - index);
+      page.style.zIndex = String(this.pages.length*2 - index);
     }
   });
   }
 
-  goPrevPage(){
+  goPrevPage(){ 
+    console.log("Current location is ",this.currentLocation);
+    console.log("Flipped page statues is ",this.flippedPages);
+    this.flippedPages[this.currentLocation-1] = false;
+    
+    console.log("Flipped page status is ",this.flippedPages);
+
+    if(this.currentLocation > 0){
+      this.currentLocation--;
+      this.flippedPages[this.currentLocation] = false;
+    }
+
+    if(this.currentLocation === 1){
+        this.closeBook(true);
+      }
+
+      else if(this.currentLocation === this.maxLocation-1){
+        this.openBook();
+      }
+
+    this.updateZIndex();
+
+    console.log("Prev location is ",this.currentLocation);
 
   }
 }
