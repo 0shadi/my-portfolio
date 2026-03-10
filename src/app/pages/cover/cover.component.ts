@@ -7,12 +7,11 @@ import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@ang
 })
 export class CoverComponent implements AfterViewInit {
   public currentLocation = 1;
-  public numOfPages = 3;
-  public maxLocation = this.numOfPages+1;
-  // public isNextButtonDisabled = false;
-
+  public numOfPages = 4;
+  public maxLocation = this.numOfPages + 1;
+  
   public pages!: NodeListOf<HTMLElement>;
-  flippedPages:boolean[] =[false, false, false,false, false]; // assuming a maximum of 5 pages for simplicity
+  flippedPages: boolean[] = [false, false, false, false, false, false];
   
 
   @ViewChild('book') book!: ElementRef;

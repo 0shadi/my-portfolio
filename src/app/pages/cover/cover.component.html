@@ -6,13 +6,13 @@
 
   <!-- Book -->
   <div #book class="book">
-    <!-- Page 1 (Front Cover) -->
+    <!-- Paper 1: Intro / Personal Details -->
     <div class="paper" id="p1" [ngClass]="{ flipped: flippedPages[1] }">
       <div class="front">
         <div class="front-content" id="f1">
           <img src="assets/gitHub.jpeg" alt="Oshadi" class="profile-img" />
           <h1>Oshadi</h1>
-          <h2>Software Developer</h2>
+          <h2>Backend Developer</h2>
 
           <p class="summary">
             Aspiring IT professional passionate about building interactive
@@ -26,48 +26,110 @@
             <a href="https://linkedin.com/in/oshadi" target="_blank" title="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>
-            <a href="mailto:oshadi@example.com" title="Email">
+            <a href="mailto:oshadi&#64;example.com" title="Email">
               <i class="fas fa-envelope"></i>
             </a>
           </div>
         </div>
       </div>
       <div class="back">
-        <div class="back-content" id="b1">
-          <h1>About Me</h1>
-          <p>Details coming soon...</p>
+        <div class="back-content">
+          <h1 class="page-title">Personal Details</h1>
+          <div class="details-list">
+            <p><strong>Name:</strong> Oshadi Perera</p>
+            <p><strong>Location:</strong> Colombo, Sri Lanka</p>
+            <p><strong>Email:</strong> oshadi&#64;example.com</p>
+            <p><strong>Phone:</strong> +94 11 222 3344</p>
+            <p><strong>Birthday:</strong> 15th July</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Page 2 -->
+    <!-- Paper 2: Educations / Technical Skills -->
     <div class="paper" id="p2" [ngClass]="{ flipped: flippedPages[2] }">
       <div class="front">
-        <div class="front-content" id="f2">
-          <h1>Projects</h1>
-          <p>My work showcase...</p>
+        <div class="front-content">
+          <h1 class="page-title">Educations</h1>
+          <div class="edu-item">
+            <h3>BSc (Hons) in Information Technology</h3>
+            <p>University of Colombo School of Computing</p>
+            <span>2022 - Present</span>
+          </div>
+          <div class="edu-item">
+            <h3>Advanced Level</h3>
+            <p>Anula Vidyalaya, Nugegoda</p>
+            <span>2020</span>
+          </div>
         </div>
       </div>
       <div class="back">
-        <div class="back-content" id="b2">
-          <h1>Skills</h1>
-          <p>Technical expertise...</p>
+        <div class="back-content">
+          <h1 class="page-title">Technical Skills</h1>
+          <div class="skills-grid">
+            <div class="skill-tag">Angular</div>
+            <div class="skill-tag">Java</div>
+            <div class="skill-tag">Spring Boot</div>
+            <div class="skill-tag">MySQL</div>
+            <div class="skill-tag">TypeScript</div>
+            <div class="skill-tag">HTML & CSS</div>
+            <div class="skill-tag">C / C++</div>
+            <div class="skill-tag">Python</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Page 3 -->
+    <!-- Paper 3: Personal Skills / Projects -->
     <div class="paper" id="p3" [ngClass]="{ flipped: flippedPages[3] }">
       <div class="front">
-        <div class="front-content" id="f3">
-          <h1>Contact</h1>
-          <p>Get in touch...</p>
+        <div class="front-content">
+          <h1 class="page-title">Personal Skills</h1>
+          <ul class="soft-skills">
+            <li>Problem Solving</li>
+            <li>Team Leadership</li>
+            <li>Effective Communication</li>
+            <li>Time Management</li>
+            <li>Adaptability</li>
+          </ul>
         </div>
       </div>
       <div class="back">
-        <div class="back-content" id="b3">
-          <h1>Thank You</h1>
-          <p>For visiting my portfolio!</p>
+        <div class="back-content">
+          <h1 class="page-title">Projects</h1>
+          <div class="project-item">
+            <h3>Portfolio Website</h3>
+            <p>Angular, SCSS, Framer Motion</p>
+          </div>
+          <div class="project-item">
+            <h3>Inventory Management</h3>
+            <p>Spring Boot, MySQL, Thymeleaf</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper 4: Interests / Other -->
+    <div class="paper" id="p4" [ngClass]="{ flipped: flippedPages[4] }">
+      <div class="front">
+        <div class="front-content">
+          <h1 class="page-title">Interests</h1>
+          <div class="interests-list">
+            <div class="interest-item"><i class="fas fa-code"></i> Coding</div>
+            <div class="interest-item"><i class="fas fa-camera"></i> Photography</div>
+            <div class="interest-item"><i class="fas fa-music"></i> Music</div>
+            <div class="interest-item"><i class="fas fa-plane"></i> Traveling</div>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="back-content">
+          <h1 class="page-title">Other</h1>
+          <div class="other-info">
+            <p><strong>Languages:</strong> English, Sinhala</p>
+            <p><strong>Volunteering:</strong> Tech Mentor at Local Club</p>
+            <p><strong>Certifications:</strong> Java Professional Certificate</p>
+          </div>
         </div>
       </div>
     </div>
