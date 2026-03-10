@@ -1,6 +1,8 @@
 <div class="book-container">
   <!-- Previous button -->
-  <button #prevBtn id="prev-button" (click)="goPrevPage()">Arrow</button>
+  <button #prevBtn id="prev-button" (click)="goPrevPage()">
+    <i class="fas fa-chevron-left"></i>
+  </button>
 
   <!-- Book -->
   <div #book class="book">
@@ -74,5 +76,7 @@
   </div>
 
   <!-- Next button -->
-  <button #nextBtn id="next-button" (click)="goNextPage()">Arrow</button>
+  <button #nextBtn id="next-button" (click)="goNextPage()">
+    <i class="fas fa-chevron-right"></i>
+  </button>
 </div>
