@@ -1,6 +1,11 @@
 <div class="book-container">
   <!-- Previous button -->
-  <button #prevBtn id="prev-button" (click)="goPrevPage()" [disabled]="currentLocation === 1">
+  <button
+    #prevBtn
+    id="prev-button"
+    (click)="goPrevPage()"
+    [disabled]="currentLocation === 1"
+  >
     <i class="fas fa-chevron-left"></i>
   </button>
 
@@ -10,15 +15,23 @@
     <div class="paper" id="p1" [ngClass]="{ flipped: flippedPages[1] }">
       <div class="front">
         <div class="front-content" id="f1">
-          <img src="assets/WhatsApp Image 2026-03-16 at 22.13.36.jpeg cropped.jpeg" alt="Oshadi" class="profile-img" />
+          <img
+            src="assets/WhatsApp Image 2026-03-16 at 22.13.36.jpeg cropped.jpeg"
+            alt="Oshadi"
+            class="profile-img"
+          />
           <h1>Oshadi Rathnasekara</h1>
-          <h2>Backend Developer</h2>
+          <h2>Intern Backend Developer</h2>
 
           <div class="social-icons">
             <a href="https://github.com/0shadi" target="_blank" title="GitHub">
               <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/oshadi-rathnasekara-909334247" target="_blank" title="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/oshadi-rathnasekara-909334247"
+              target="_blank"
+              title="LinkedIn"
+            >
               <i class="fab fa-linkedin"></i>
             </a>
             <a href="mailto:oshadiinduwari@gmail.com" title="Email">
@@ -29,17 +42,22 @@
       </div>
       <div class="back">
         <div class="back-content">
-          <h1 class="page-title">Personal Details</h1>
-          <p class="summary">
-            Aspiring IT professional passionate about building interactive
-            web applications using modern technologies like Angular, Spring Boot, and MySQL.
-          </p>
-          <div class="details-list">
-            <p><strong>Name:</strong> Oshadi Perera</p>
-            <p><strong>Location:</strong> Colombo, Sri Lanka</p>
-            <p><strong>Email:</strong> oshadi&#64;example.com</p>
-            <p><strong>Phone:</strong> +94 11 222 3344</p>
-            <p><strong>Birthday:</strong> 15th July</p>
+          <h1 class="page-title">About Me</h1>
+          <div class="about-summary">
+            <p>
+              Hi, I’m Oshadi Rathnasekara, an aspiring Backend Developer with a
+              passion for building robust and efficient systems.
+              <br /><br />
+              Currently, I’m sharpening my skills as an intern while completing
+              my degree at the University of Colombo School of Computing.
+              <br /><br />
+              I enjoy transforming complex requirements into clean, scalable
+              solutions and continuously exploring new technologies that expand
+              my capabilities.
+              <br /><br />
+              I’m excited to apply my skills to meaningful projects and grow in
+              the ever-evolving world of software engineering.
+            </p>
           </div>
         </div>
       </div>
@@ -51,14 +69,16 @@
         <div class="front-content">
           <h1 class="page-title">Educations</h1>
           <div class="edu-item">
-            <h3>BSc (Hons) in Information Technology</h3>
+            <h3>Bacherlors in Information Technology (BIT)</h3>
             <p>University of Colombo School of Computing</p>
-            <span>2022 - Present</span>
+            <p class="gpa">2nd Class Upper</p>
+            <span>2022 - 2025</span>
           </div>
           <div class="edu-item">
             <h3>Advanced Level</h3>
-            <p>Anula Vidyalaya, Nugegoda</p>
-            <span>2020</span>
+            <p>Sri Sangamitta Girls’ National School Matale</p>
+            <p class="gpa">Physical Science Stream | Z-Score: 1.0</p>
+            <span>2021</span>
           </div>
         </div>
       </div>
@@ -115,9 +135,13 @@
           <h1 class="page-title">Interests</h1>
           <div class="interests-list">
             <div class="interest-item"><i class="fas fa-code"></i> Coding</div>
-            <div class="interest-item"><i class="fas fa-camera"></i> Photography</div>
+            <div class="interest-item">
+              <i class="fas fa-camera"></i> Photography
+            </div>
             <div class="interest-item"><i class="fas fa-music"></i> Music</div>
-            <div class="interest-item"><i class="fas fa-plane"></i> Traveling</div>
+            <div class="interest-item">
+              <i class="fas fa-plane"></i> Traveling
+            </div>
           </div>
         </div>
       </div>
@@ -127,7 +151,9 @@
           <div class="other-info">
             <p><strong>Languages:</strong> English, Sinhala</p>
             <p><strong>Volunteering:</strong> Tech Mentor at Local Club</p>
-            <p><strong>Certifications:</strong> Java Professional Certificate</p>
+            <p>
+              <strong>Certifications:</strong> Java Professional Certificate
+            </p>
           </div>
         </div>
       </div>
@@ -135,7 +161,12 @@
   </div>
 
   <!-- Next button -->
-  <button #nextBtn id="next-button" (click)="goNextPage()" [disabled]="currentLocation === maxLocation">
+  <button
+    #nextBtn
+    id="next-button"
+    (click)="goNextPage()"
+    [disabled]="currentLocation === maxLocation"
+  >
     <i class="fas fa-chevron-right"></i>
   </button>
 </div>
