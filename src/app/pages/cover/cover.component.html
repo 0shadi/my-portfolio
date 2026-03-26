@@ -86,14 +86,16 @@
         <div class="back-content">
           <h1 class="page-title">Technical Skills</h1>
           <div class="skills-grid">
-            <div class="skill-tag">Angular</div>
-            <div class="skill-tag">Java</div>
-            <div class="skill-tag">Spring Boot</div>
-            <div class="skill-tag">MySQL</div>
-            <div class="skill-tag">TypeScript</div>
-            <div class="skill-tag">HTML & CSS</div>
-            <div class="skill-tag">C / C++</div>
-            <div class="skill-tag">Python</div>
+            <div
+              class="skill-tag"
+              *ngFor="let skill of technicalSkills"
+              [style.background-color]="
+                'rgba(139, 69, 19, ' + skill.level / 100 + ')'
+              "
+              [style.color]="skill.level > 50 ? 'white' : '#8b4513'"
+            >
+              {{ skill.name }}
+            </div>
           </div>
         </div>
       </div>
@@ -105,11 +107,14 @@
         <div class="front-content">
           <h1 class="page-title">Personal Skills</h1>
           <ul class="soft-skills">
-            <li>Problem Solving</li>
-            <li>Team Leadership</li>
-            <li>Effective Communication</li>
-            <li>Time Management</li>
-            <li>Adaptability</li>
+            <li>Strong attention to detail and organizational skills</li>
+            <li>Quick learner, adaptable to new technologies</li>
+            <li>Effective team player with excellent communication</li>
+            <li>Goal-driven, self-motivated, and proactive</li>
+            <li>
+              Skilled in problem-solving, analytical thinking, and time
+              management
+            </li>
           </ul>
         </div>
       </div>

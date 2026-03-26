@@ -306,16 +306,22 @@ button {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
+  animation: fadeIn 1s ease-out 0.4s both;
+
   .skill-tag {
-    background: rgba($primary-color, 0.1);
-    color: $primary-color;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 400;
     border: 1px solid rgba($primary-color, 0.2);
     transition: all 0.3s ease;
-    &:hover { background: $primary-color; color: white; }
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      filter: brightness(1.1);
+    }
   }
 }
 

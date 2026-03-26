@@ -13,6 +13,16 @@ export class CoverComponent implements AfterViewInit {
   public pages!: NodeListOf<HTMLElement>;
   flippedPages: boolean[] = [false, false, false, false, false, false];
   
+  public technicalSkills = [
+    { name: 'Java', level: 80 },
+    { name: 'Spring Boot', level: 70 },
+    { name: 'MySQL', level: 75 },
+    { name: 'TypeScript', level: 50 },
+    { name: 'Angular', level: 60 },
+    { name: 'php', level: 90 },
+    { name: 'HTML & CSS', level: 90 },
+    { name: 'Git', level: 80 }
+  ];
 
   @ViewChild('book') book!: ElementRef;
   @ViewChild('prevBtn') prevBtn!: ElementRef;
