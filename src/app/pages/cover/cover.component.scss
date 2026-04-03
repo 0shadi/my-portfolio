@@ -338,12 +338,12 @@ button {
   }
 }
 
-.interests-list {
+.interests-list, .languages-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 100%;
-  .interest-item {
+  .interest-item, .language-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -353,10 +353,81 @@ button {
   }
 }
 
-.other-info {
-  text-align: left;
+.contact-creative {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  p { margin: 20px 0; color: #444; strong { color: $primary-color; } }
+  gap: 25px;
+
+  .creative-msg {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      color: $text-color;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba($primary-color, 0.05);
+      border: 1px solid rgba($primary-color, 0.1);
+
+      i {
+        font-size: 1.3rem;
+        color: $primary-color;
+        width: 25px;
+      }
+
+      span {
+        flex: 1;
+        text-align: left;
+      }
+
+      &:hover {
+        background: rgba($primary-color, 0.1);
+        transform: translateY(-2px);
+        color: $primary-color;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+    }
+  }
+
+  .handwriting-msg {
+    font-family: $font-family-title;
+    font-size: 1.6rem;
+    color: $accent-color;
+    margin-top: 15px;
+    transform: rotate(-3deg);
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba($accent-color, 0.3);
+    }
+  }
 }
 
 // Smooth transitions for book container movements
