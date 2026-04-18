@@ -5,13 +5,13 @@ import { CoverComponent } from './pages/cover/cover.component';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'cover-page',
-        component: CoverComponent
-      }
-    ]
+    redirectTo: 'cover-page',
+    pathMatch: 'full'
   },
+  {
+    path: 'cover-page',
+    component: CoverComponent
+  }
 ];
 
 @NgModule({
