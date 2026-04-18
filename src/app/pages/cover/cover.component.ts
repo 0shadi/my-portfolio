@@ -7,7 +7,7 @@ import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@ang
 })
 export class CoverComponent implements AfterViewInit {
   public currentLocation = 1;
-  public numOfPages = 4;
+  public numOfPages = 5;
   public maxLocation = this.numOfPages + 1;
   
   public pages!: NodeListOf<HTMLElement>;
